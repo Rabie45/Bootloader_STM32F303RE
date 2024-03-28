@@ -80,8 +80,11 @@ download this software https://www.st.com/en/development-tools/flasher-stm32.htm
       - connect ur board to PC
       - connect pin of boot0 to the vcc to make the flasher see the board
       - as shown in figure
+      ![7](https://github.com/Rabie45/Bootloader_STM32F303RE/assets/76526170/1fc5fa8e-26cc-467d-81d0-da7f34d1e564)
+
       - open program after connect the BOOT0 to VCC
-      ![5](https://github.com/Rabie45/Bootloader_STM32F303RE/assets/76526170/e36a7712-8bf6-4d11-a6a8-ac2d3d193401)
+     
+![5](https://github.com/Rabie45/Bootloader_STM32F303RE/assets/76526170/e36a7712-8bf6-4d11-a6a8-ac2d3d193401)
 
       - press on reset button (Blackbutton) as shown in figure and follow the figures using this binary file 
       
