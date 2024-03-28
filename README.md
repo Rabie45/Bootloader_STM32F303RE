@@ -93,6 +93,7 @@ download this software https://www.st.com/en/development-tools/flasher-stm32.htm
 ![10](https://github.com/Rabie45/Bootloader_STM32F303RE/assets/76526170/622ff9d3-542d-4452-b228-df2113f0fad1)
 
 The program is using systick timer to blink the LED if it blinking Bingooo
+![IMG20221225205208](https://user-images.githubusercontent.com/76526170/209479323-8350920e-1ecf-4d79-b639-0b80fcf16598.gif)
 
 ## Create ur custom bootloader
 
@@ -107,4 +108,3 @@ The program is using systick timer to blink the LED if it blinking Bingooo
   The link below is the project custom bootloader
 
   
-![IMG20221225205208](https://user-images.githubusercontent.com/76526170/209479323-8350920e-1ecf-4d79-b639-0b80fcf16598.gif)
