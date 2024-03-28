@@ -9,6 +9,7 @@
 - [x] Code placement in flash
 - [x] Datasheet information
 - [x] how to use flasher software from ST microcontrollers
+- [x] Create ur custom bootloader
 
 ## First what is bootloader ?
 
@@ -24,8 +25,7 @@
 
 ![1](https://github.com/Rabie45/Bootloader_STM32F303RE/assets/76526170/d2cb15fe-9b27-4266-98c4-ca65f96a2851)
 
-
-  ** __ For stm32f303RE as shown in photo the board has on chip bootloader__ **
+\*\* ** For stm32f303RE as shown in photo the board has on chip bootloader** \*\*
 
 ## what is happening when u reset the board ?
 
@@ -46,20 +46,18 @@
 
 ![2](https://github.com/Rabie45/Bootloader_STM32F303RE/assets/76526170/d19503bc-05c8-4003-86bf-626f335991ab)
 
-
-  you can figure out from the table
-  if boot1 don't care boot0 == 0 the boot area is main flash memory
-  if boot1 == 1 boot0 == 0 the boot area is system memory
-  if boot1 == 0 boot0 == 1 the boot area is Embedded SRAM
+you can figure out from the table
+if boot1 don't care boot0 == 0 the boot area is main flash memory
+if boot1 == 1 boot0 == 0 the boot area is system memory
+if boot1 == 0 boot0 == 1 the boot area is Embedded SRAM
 
 - Look at this Embedded bootloader u would find out that ur board connected through USART2 PA2,PA3
-![3](https://github.com/Rabie45/Bootloader_STM32F303RE/assets/76526170/3de06120-ec85-4ca0-8705-129d115c2c38)
+  ![3](https://github.com/Rabie45/Bootloader_STM32F303RE/assets/76526170/3de06120-ec85-4ca0-8705-129d115c2c38)
 
 ## Code placement in flash
 
 - At page 65 u would find Flash module organization which have multiple sectors
-- 
-![4](https://github.com/Rabie45/Bootloader_STM32F303RE/assets/76526170/fc490712-8110-4c02-90d3-3c174caffeea)
+- ![4](https://github.com/Rabie45/Bootloader_STM32F303RE/assets/76526170/fc490712-8110-4c02-90d3-3c174caffeea)
 
 - usually the IDE start the user application in this section
 
@@ -86,10 +84,21 @@ download this software https://www.st.com/en/development-tools/flasher-stm32.htm
      
 ![5](https://github.com/Rabie45/Bootloader_STM32F303RE/assets/76526170/e36a7712-8bf6-4d11-a6a8-ac2d3d193401)
 
-      - press on reset button (Blackbutton) as shown in figure and follow the figures using this binary file 
-      
+      - press on reset button (Blackbutton) as shown in figure and follow the figures using this binary file
+
 ![23](https://github.com/Rabie45/Bootloader_STM32F303RE/assets/76526170/7a2716fd-82c9-411c-8852-df2eba535446)
 ![8](https://github.com/Rabie45/Bootloader_STM32F303RE/assets/76526170/1c56a108-cb49-42b1-9129-257be971670e)
 ![9](https://github.com/Rabie45/Bootloader_STM32F303RE/assets/76526170/db7a9e77-959f-4ff4-b12e-0fec7750f8bf)
 ![11](https://github.com/Rabie45/Bootloader_STM32F303RE/assets/76526170/d1645b88-897a-4d7b-a82d-309db4f19650)
 ![10](https://github.com/Rabie45/Bootloader_STM32F303RE/assets/76526170/622ff9d3-542d-4452-b228-df2113f0fad1)
+
+The program is using systick timer to blink the LED if it blinking Bingooo
+
+## Create ur custom bootloader
+
+- First lets Explain what we are going to do :
+
+  - The task is to create a program start with application with multiple options one for bootloader command and the other for user application to something like that we would use Flash module organization used before create multiple section in memory each section is full program it self (vector table + system init + main) once the program start choose the program u want and the bootloader will through u to the starting address holding this program
+  - the figure show the addresses of each program and how to mange the space
+
+  The link below is the project custom bootloader
