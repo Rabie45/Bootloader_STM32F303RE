@@ -100,5 +100,9 @@ The program is using systick timer to blink the LED if it blinking Bingooo
 
   - The task is to create a program start with application with multiple options one for bootloader command and the other for user application to something like that we would use Flash module organization used before create multiple section in memory each section is full program it self (vector table + system init + main) once the program start choose the program u want and the bootloader will through u to the starting address holding this program
   - the figure show the addresses of each program and how to mange the space
+![2_drawio](https://github.com/Rabie45/Bootloader_STM32F303RE/assets/76526170/fcdc2f07-729f-4b89-b2b0-b3356bd0ade5)
+
+![3_drawio](https://github.com/Rabie45/Bootloader_STM32F303RE/assets/76526170/32b13d89-d4e2-47d3-8c96-d2fc33a091bd)
 
   The link below is the project custom bootloader
+![IMG20221225205208](https://user-images.githubusercontent.com/76526170/209479323-8350920e-1ecf-4d79-b639-0b80fcf16598.gif)
